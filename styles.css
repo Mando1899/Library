@@ -1,0 +1,22 @@
+.book {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 20em;
+    height: 25em;
+    flex-direction: column;
+    background-color: beige;
+    border: 0.4em solid brown;
+    outline: 1em solid beige;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+}
+
+.writer {
+    font-size: 2em;
+    margin: 1em;
+}
+.title {
+    font-size: 2em;
+}
