@@ -1,4 +1,5 @@
 .books {
+    margin-top: 3em;
     display: flex;
     flex-wrap: wrap;
     gap: 3em;
@@ -18,7 +19,7 @@
     text-align: center;
 }
 
-.writer {
+.author {
     font-size: 2em;
     margin: 1em;
 }

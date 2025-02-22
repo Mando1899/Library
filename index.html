@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mastermind Library</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js" defer></script>
 </head>
 <body>
     <div class="main-contianer">
         <div class="header">
             <h1>Mastermind Library</h1>
         </div>
+
+        <form action="/" method="GET">
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" value="lol" placeholder="Dostoyevsky" name="author" class="input-author" id="author">
+            </div>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" placeholder="Crime and Punishment" name="title" class="input-title" id="title">
+            </div>
+            <div>
+                <label for="pages">Number of pages:</label>
+                <input type="number" name="pages" class="input-pages" id="pages">
+            </div>
+            <button type="submit" class="add-book">Add Book</button>
+        </form>
+
         <div class="books">
             <div class="book">
-                <span class="writer">FYODOR MIKHAILOVICH DOSTOYEVSKY</span>
+                <span class="author">FYODOR MIKHAILOVICH DOSTOYEVSKY</span>
                 <span class="title">Crime and Punishment</span>
                 <span>600 pages</span>
             </div>
             <div class="book">
-                <span class="writer">FYODOR MIKHAILOVICH DOSTOYEVSKY</span>
+                <span class="author">FYODOR MIKHAILOVICH DOSTOYEVSKY</span>
                 <span class="title">Crime and Punishment</span>
                 <span>600 pages</span>
             </div>
             <div class="book">
-                <span class="writer">FYODOR MIKHAILOVICH DOSTOYEVSKY</span>
+                <span class="author">FYODOR MIKHAILOVICH DOSTOYEVSKY</span>
                 <span class="title">Crime and Punishment</span>
                 <span>600 pages</span>
             </div>
