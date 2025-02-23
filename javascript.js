@@ -9,6 +9,13 @@ const books = document.querySelectorAll('.book');
 
 let library = [];
 
+function Book(author, title, pageNum, read, bookInfo){
+    this.author = author;
+    this.title = title;
+    this.pageNum = pageNum;
+    this.read = read;
+    this.bookInfo = () => {return bookInfo};
+}
 
 books.forEach(element => {
     let author = element.childNodes[1].innerText;
@@ -19,25 +26,31 @@ books.forEach(element => {
     library.push(newBook);
 });
 
-function Book(author, title, pageNum, read, bookInfo){
-    this.author = author;
-    this.title = title;
-    this.pageNum = pageNum;
-    this.read = read;
-    this.bookInfo = () => {return bookInfo};
-}
-
 function addBook(event){
-    let author = authorInput.value;
-    let title = titleInput.value;
-    let pageNum = pagesInput.value;
-    let read = false;
-    
-    let newBook = new Book(author, title, pageNum, read);
+    let newBook = new Book(authorInput.value, titleInput.value, pagesInput.value, false);
+    console.log(newBook)
+    const bookDiv = document.createElement('div');
+    bookDiv.classList.add('book');
+    const author = document.createElement('span');
+    author.classList.add('author');
+    author.innerText = newBook.author.toUpperCase();
+    const title = document.createElement('span');
+    title.classList.add('title');
+    title.innerText = newBook.title;
+    const pages = document.createElement('span');
+    pages.innerText = newBook.pageNum + ' pages';
+
+    bookDiv.appendChild(author);
+    bookDiv.appendChild(title);
+    bookDiv.appendChild(pages);
+    event.preventDefault();
+    document.querySelector('.books').appendChild(bookDiv);
+    console.log(bookDiv);
     library.push(newBook);
-    console.log(library);
     event.preventDefault();
 }
+
+
 
 addBookBtn.addEventListener("click", addBook);
 
