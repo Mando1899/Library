@@ -39,6 +39,7 @@ function addBook(event){
     title.innerText = newBook.title;
     const pages = document.createElement('span');
     pages.innerText = newBook.pageNum + ' pages';
+    pages.classList.add('pages');
 
     bookDiv.appendChild(author);
     bookDiv.appendChild(title);

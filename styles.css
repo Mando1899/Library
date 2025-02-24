@@ -7,9 +7,10 @@
 }
 
 .book {
+    position: relative;
     display: flex;
-    width: 20em;
-    height: 25em;
+    width: 17em;
+    height: 22em;
     flex-direction: column;
     background-color: beige;
     border: 0.4em solid brown;
@@ -19,10 +20,21 @@
     text-align: center;
 }
 
+span {
+    margin: 0;
+    padding: 0;
+}
+
 .author {
     font-size: 2em;
-    margin: 1em;
+    margin-top: 1em;
 }
+
 .title {
     font-size: 2em;
+}
+
+.pages {
+      position: absolute;
+      bottom: 1.5em;
 }
