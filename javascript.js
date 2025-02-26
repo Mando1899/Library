@@ -2,6 +2,14 @@ const form = document.getElementsByTagName('form');
 const authorInput = document.getElementById('author');
 const titleInput = document.getElementById('title');
 const pagesInput = document.getElementById('pages');
+const addBookModalBtn = document.querySelector('.open');
+const addBookModal = document.querySelector('dialog');
+
+console.log(addBookModalBtn);
+addBookModalBtn.addEventListener("click", () => {
+    console.log("Hello, anybody here?");
+    addBookModal.showModal();
+});
 
 const addBookBtn = document.querySelector(".add-book");
 
@@ -49,6 +57,7 @@ function addBook(event){
     console.log(bookDiv);
     library.push(newBook);
     event.preventDefault();
+    addBookModal.close();
 }
 
 
