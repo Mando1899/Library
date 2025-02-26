@@ -1,3 +1,8 @@
+body {
+    background-color: white;
+    font-family: "Roboto";
+}
+
 .books {
     margin-top: 3em;
     display: flex;
@@ -10,14 +15,14 @@
     position: relative;
     display: flex;
     width: 17em;
-    height: 22em;
+    height: 15em;
+    border: 2px solid black;
     flex-direction: column;
-    background-color: beige;
-    border: 0.4em solid brown;
-    outline: 1em solid beige;
+    background-color: #F8FAFC;
     align-items: center;
     gap: 1em;
     text-align: center;
+    box-shadow: -8px 8px 0px 0px rgba(0,0,0,0.75);;
 }
 
 span {
@@ -26,12 +31,27 @@ span {
 }
 
 .author {
-    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    height: 3em;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    background-color: #D9EAFD;
+    font-size: 1.5em;
     margin-top: 1em;
+    text-align: center;
 }
 
 .title {
-    font-size: 2em;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    font-size: 1.5em;
 }
 
 .pages {
