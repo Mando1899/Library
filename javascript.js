@@ -5,7 +5,6 @@ const pagesInput = document.getElementById('pages');
 const addBookModalBtn = document.querySelector('.open');
 const addBookModal = document.querySelector('dialog');
 
-console.log(addBookModalBtn);
 addBookModalBtn.addEventListener("click", () => {
     console.log("Hello, anybody here?");
     addBookModal.showModal();
@@ -15,50 +14,56 @@ const addBookBtn = document.querySelector(".add-book");
 
 const books = document.querySelectorAll('.book');
 
-let library = [];
+let library = new Map();
 
-function Book(author, title, pageNum, read, bookInfo){
+function Book(author, title, pageNum, read, id){
     this.author = author;
     this.title = title;
     this.pageNum = pageNum;
     this.read = read;
-    this.bookInfo = () => {return bookInfo};
+    this.id = id;
 }
 
+let idCounter = 0;
 books.forEach(element => {
-    let author = element.childNodes[1].innerText;
-    let title = element.childNodes[3].innerText;
-    let pageNum = element.childNodes[5].innerText;
+    const author = element.childNodes[1];
+    const title = element.childNodes[3];
+    const pageNum = element.childNodes[5];
     let read = false;
-    let newBook = new Book(author, title, pageNum, read);
-    library.push(newBook);
+    const newBook = new Book(author, title, pageNum, read, idCounter);
+    library.set(idCounter, newBook);
+    idCounter++;
 });
 
+console.log(library);
 function addBook(event){
-    let newBook = new Book(authorInput.value, titleInput.value, pagesInput.value, false);
-    console.log(newBook)
     const bookDiv = document.createElement('div');
     bookDiv.classList.add('book');
     const author = document.createElement('span');
     author.classList.add('author');
-    author.innerText = newBook.author.toUpperCase();
+    author.innerText = authorInput.value.toUpperCase();
     const title = document.createElement('span');
     title.classList.add('title');
-    title.innerText = newBook.title;
+    title.innerText = titleInput.value;
     const pages = document.createElement('span');
-    pages.innerText = newBook.pageNum + ' pages';
+    pages.innerText = pagesInput.value + ' pages';
     pages.classList.add('pages');
+
+    const newBook = new Book(author, title, pages, true, idCounter);
 
     bookDiv.appendChild(author);
     bookDiv.appendChild(title);
     bookDiv.appendChild(pages);
-    event.preventDefault();
     document.querySelector('.books').appendChild(bookDiv);
     console.log(bookDiv);
-    library.push(newBook);
+    library.set(idCounter, newBook);
+    library.get(0);
+    idCounter++;
+    console.log(library)
     event.preventDefault();
     addBookModal.close();
 }
+
 
 
 
